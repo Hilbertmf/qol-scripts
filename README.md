@@ -1,2 +1,2 @@
-# scripts
-scripts in shell for quality of life/ procedures
+# bash-scripts
+scripts in bash for quality of life / procedures
