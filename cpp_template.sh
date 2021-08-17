@@ -7,9 +7,11 @@ fi
 
 filename="$1"
 
-str="#include <stdio.h>
-\n#include <stdlib.h>
-\n\nint main()
+str="#include <iostream>
+\n#include <stdio.h>
+\n#include <stdlib.h>\n
+\nusing namespace std;\n
+\nint main()
 \n{
   \n\tint aux;\n
   \n\tscanf(\"%d\", &aux);\n
@@ -17,5 +19,5 @@ str="#include <stdio.h>
   \n\treturn 0;
 \n}"
 
-echo -e $str > "$filename.c"
+echo -e $str > "$filename.cpp"
 echo "Done!"
