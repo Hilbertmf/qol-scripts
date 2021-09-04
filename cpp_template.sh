@@ -1,15 +1,14 @@
 #!/bin/bash
 
 if (($# != 1)); then
-	echo "Usage: c_template.sh <filename>"
+	echo "Usage: cpp_template.sh <filename>"
 	exit 1
 fi
 
 filename="$1"
 
 str="#include <iostream>
-\n#include <stdio.h>
-\n#include <stdlib.h>\n
+\n#include <bits/stdc++.h>\n
 \nusing namespace std;\n
 \nint main()
 \n{
