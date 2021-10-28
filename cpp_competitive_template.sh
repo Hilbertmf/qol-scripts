@@ -9,7 +9,7 @@ main() {
 
   # get flags
   contest_flag=0
-  specific_flag=0
+  specify_flag=0
   num_problems=0
   while getopts "c:s:h" flag; do
     case $flag in
@@ -18,7 +18,7 @@ main() {
       contest_flag=1 ;;
       s)
       problem_names=$OPTARG 
-      specific_flag=1 ;;
+      specify_flag=1 ;;
       h)
       print_usage
       exit ;;
@@ -41,7 +41,7 @@ main() {
       echo "creating file ${problems[$i]}.cpp..."
       create_file ${problems[$i]}
     done
-  elif (($specific_flag > 0)) ;then
+  elif (($specify_flag > 0)) ;then
     
     names=$(echo $problem_names | tr "," " ")
     for name in $names
@@ -62,11 +62,19 @@ main() {
 create_file() {
   local code="#include <bits/stdc++.h>
   \nusing namespace std;
-  \n#define INF (int)1e9
+  \n#define DEBUG(x) cout << #x << \" >>>> \" << x << endl
+  \n#define MID(l, r) (l + (r - l) / 2)
+  \n#define CEILDIVISION(x, y) ((x + y - 1) / y)
+  \n#define LONGINF (long long)1e18 
   \n#define LONGINF (long)1e18
-  \n#define MEM(a, b) memset(a, (b), sizeof(a))
-  \n#define fastio ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+  \n#define MEM(arr, val) memset(arr, (val), sizeof(arr))
+  \n#define FASTIO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
   \nconst int MOD = 1000000007; // 10^9 - 7
+  \nvoid initArray(int arr[], int length, int val) {
+    \n\tfor (int i = 0; i < length; i++)
+      \n\t\tarr[i] = val;
+    \n\treturn;
+  \n}
   \n
   \nvoid solve() {
   \n
@@ -77,16 +85,18 @@ create_file() {
   \n}
   \n
   \nint main() {
-    \n\tfastio;
+    \n\tFASTIO;
     \n\t//ifstream cin(\"in.txt\");
     \n\t//ofstream cout(\"out.txt\"); // cout to file
     \n\t//freopen(\"out.txt\",\"w\",stdout); // use this one for printf to file
-    \n\n\tint n, ans;
-    \n\tcin >> n;
-    \n\t//int arr[n] = {0};
-    \n\n\n\t//for(int i = 0; i < n; i++)
-    \n\t\t//  cin >> arr[i];
-
+    \n\n\tlong long num, ans;
+    \n\n\tint num, ans;
+    \n\tcin >> num;
+    \n\t//int objs[num] = {0};
+    \n\t//long long objs[num] = {0};
+    \n\n\n\t//for(int i = 0; i < num; i++) {
+    \n\t\t//  cin >> objs[i];
+    \n\t//}
     \n\n\n\tcout << ans << endl;
     \n\t//printf(\"%d\", ans);
     \n\treturn 0;
@@ -113,7 +123,7 @@ print_usage() {
   echo "Usage:
 create single file: cpp_competitive_template.sh <filename>
 start a contest: -c <num_problems>
-create specific files: -s <file1>,<file2>,..."
+specify file names: -s <file1>,<file2>,..."
 }
 
 main "$@"; exit
