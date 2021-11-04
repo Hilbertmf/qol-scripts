@@ -65,8 +65,8 @@ create_file() {
   \n#define DEBUG(x) cout << #x << \" >>>> \" << x << endl
   \n#define MID(l, r) (l + (r - l) / 2)
   \n#define CEILDIVISION(x, y) ((x + y - 1) / y)
+  \n#define INF (int)1e9
   \n#define LONGINF (long long)1e18 
-  \n#define LONGINF (long)1e18
   \n#define MEM(arr, val) memset(arr, (val), sizeof(arr))
   \n#define FASTIO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
   \nconst int MOD = 1000000007; // 10^9 - 7
@@ -76,29 +76,13 @@ create_file() {
     \n\treturn;
   \n}
   \n
-  \nvoid solve() {
-  \n
-  \n}
-  \n
-  \nint solve(int arg) {
-  \n
-  \n}
-  \n
   \nint main() {
     \n\tFASTIO;
     \n\t//ifstream cin(\"in.txt\");
     \n\t//ofstream cout(\"out.txt\"); // cout to file
     \n\t//freopen(\"out.txt\",\"w\",stdout); // use this one for printf to file
-    \n\n\tlong long num, ans;
-    \n\n\tint num, ans;
-    \n\tcin >> num;
+    \n\t
     \n\t//int objs[num] = {0};
-    \n\t//long long objs[num] = {0};
-    \n\n\n\t//for(int i = 0; i < num; i++) {
-    \n\t\t//  cin >> objs[i];
-    \n\t//}
-    \n\n\n\tcout << ans << endl;
-    \n\t//printf(\"%d\", ans);
     \n\treturn 0;
   \n}"
 
