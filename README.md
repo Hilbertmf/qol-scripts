@@ -1,5 +1,5 @@
-# bash-scripts
-scripts in bash for quality of life / procedures
+# qol-scripts
+scripts for quality of life / procedures
 
 After cloning the repository you have to make the files executable. You can do it with the following command:
 ```

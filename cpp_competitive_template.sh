@@ -70,20 +70,9 @@ create_file() {
   \n#define MEM(arr, val) memset(arr, (val), sizeof(arr))
   \n#define FASTIO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
   \nconst int MOD = 1000000007; // 10^9 - 7
-  \nvoid initArray(int arr[], int length, int val) {
-    \n\tfor (int i = 0; i < length; i++)
-      \n\t\tarr[i] = val;
-    \n\treturn;
-  \n}
   \n
   \nint main() {
-    \n\tFASTIO;
-    \n\t//ifstream cin(\"in.txt\");
-    \n\t//ofstream cout(\"out.txt\"); // cout to file
-    \n\t//freopen(\"out.txt\",\"w\",stdout); // use this one for printf to file
-    \n\t
-    \n\t//int objs[num] = {0};
-    \n\treturn 0;
+    \n\tFASTIO;\n\t\n\t\n\treturn 0;
   \n}"
 
   echo -e $code > "$1.cpp"
