@@ -31,14 +31,23 @@
 		],
 		"description": "reverse for"
 	},
-	"for over vector": {
+	"for using iterator": {
 		"prefix": "forvec",
 		"body": [
-			"for(auto ${1:it} = ${2:vector}.begin(); ${1:it} != ${2:vector}.end(); ++${1:it}) {",
+			"for(auto ${1:it} = ${2:collection}.begin(); ${1:it} != ${2:collection}.end(); ++${1:it}) {",
 			"\t$0",
 			"}"
 		],
-		"description": "for over vector"
+		"description": "for using iterator"
+	},
+	"reverse for using iterator": {
+		"prefix": "rforvec",
+		"body": [
+			"for(auto ${1:it} = ${2:collection}.rbegin(); ${1:it} != ${2:collection}.rend(); ++${1:it}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "reverse for using iterator"
 	},
 	"foreach": {
 		"prefix": "foreach",
@@ -47,7 +56,16 @@
 			"\t$0",
 			"}"
 		],
-		"description": "for loop"
+		"description": "foreach loop"
+	},
+	"foreach const": {
+		"prefix": "cforeach",
+		"body": [
+			"for(const auto &${1:item} : ${2:collection}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "foreach const loop"
 	},
 	"while": {
 		"prefix": ["while"],
@@ -55,22 +73,37 @@
 			 "\t$0",
 			  "}"
 			],
-		"description": "whille loop"
+		"description": "while loop"
 	},
 	"cin1": {
 		"prefix": "cin1",
-		"body": ["std::cin >> ${1:var};", "$0"],
+		"body": ["cin >> ${1:var};"],
 		"description": "cin 1 variable"
 	},
 	"cin2": {
 		"prefix": "cin2",
-		"body": ["std::cin >> ${1:var1} >> ${2:var2};","$0"],
+		"body": ["cin >> ${1:var1} >> ${2:var2};"],
 		"description": "cin 2 variables"
 	},
+	"cin3": {
+		"prefix": "cin3",
+		"body": ["cin >> ${1:var1} >> ${2:var2} >> ${3:var3};"],
+		"description": "cin 3 variables"
+	},
+	"cin4": {
+		"prefix": "cin4",
+		"body": ["cin >> ${1:var1} >> ${2:var2} >> ${3:var3} >> ${4:var4};"],
+		"description": "cin 4 variables"
+	},
 	"cout": {
-		"prefix": "cout",
-		"body": ["std::cout << ${1:var} << std::endl;"],
+		"prefix": "out",
+		"body": ["cout << ${1:var} << endl;"],
 		"description": "cout"
+	},
+	"cout2": {
+		"prefix": "out2",
+		"body": ["cout << ${1:var1} << ${2:var2} << endl;"],
+		"description": "cout 2 variables"
 	},
 	"class": {
 		"prefix": "class",
@@ -104,13 +137,13 @@
 	},
 	"all in collection": {
 		"prefix": "all",
-		"body": ["${1:vec}.begin(), ${1:vec}.end()"],
+		"body": ["${1:collection}.begin(), ${1:collection}.end()"],
 		"description": "all in collection"
 	},
 	"reverse all in collection": {
-		"prefix": "all",
-		"body": ["${1:vec}.end(), ${1:vec}.begin()"],
-		"description": "reverse all"
+		"prefix": "rall",
+		"body": ["${1:collection}.rbegin(), ${1:collection}.rend()"],
+		"description": "reverse all in collection"
 	},
 	"long long": {
 		"prefix": "ll",
@@ -119,7 +152,7 @@
 	},
 	"vector of int": {
 		"prefix": "vi",
-		"body": ["vector<int>"],
+		"body": ["vector<${1:int}>"],
 		"description": "vector of int"
 	},
 	"vector of long long": {
@@ -134,7 +167,7 @@
 	},
 	"pair of int": {
 		"prefix": "pii",
-		"body": ["pair<int, int>"],
+		"body": ["pair<${1:int}, ${2:int}>"],
 		"description": "pair of int"
 	},
 	"pair of long long": {
@@ -144,7 +177,7 @@
 	},
 	"vector of pair of int": {
 		"prefix": "vii",
-		"body": ["vector<pair<int, int>>"],
+		"body": ["vector<pair<${1:int}, ${2:int}>>"],
 		"description": "vector of pair"
 	},
 	"vector of pair of long long": {
@@ -154,27 +187,52 @@
 	},
 	"map of ints": {
 		"prefix": "mpii",
-		"body": ["map<int, int>"],
+		"body": ["map<${1:int}, ${2:int}>"],
 		"description": "map of ints"
 	},
+	"multimap of ints": {
+		"prefix": "mmpii",
+		"body": ["multimap<${1:int}, ${2:int}>"],
+		"description": "multimap of ints"
+	},
 	"set of int": {
-		"prefix": "seti",
-		"body": ["set<int>"],
+		"prefix": "sti",
+		"body": ["set<${1:int}>"],
 		"description": "set of int"
 	},
 	"multiset of int": {
 		"prefix": "mseti",
-		"body": ["multiset<int>"],
+		"body": ["multiset<${1:int}>"],
 		"description": "multiset of int"
+	},
+	"unordered map of ints": {
+		"prefix": "umap",
+		"body": ["unordered_map<${1:int}, ${2:int}>"],
+		"description": "unordered map of ints"
+	},
+	"unordered multimap of ints": {
+		"prefix": "ummap",
+		"body": ["unordered_multimap<${1:int}, ${2:int}>"],
+		"description": "unordered multimap of ints"
+	},
+	"unordered set of int": {
+		"prefix": "uset",
+		"body": ["unordered_set<${1:int}>"],
+		"description": "unordered set of int"
+	},
+	"unordered multiset of int": {
+		"prefix": "umset",
+		"body": ["unordered_multiset<${1:int}>"],
+		"description": "unordered multiset of int"
 	},
 	"make pair": {
 		"prefix": "mp",
-		"body": ["make_pair"],
+		"body": ["make_pair(${1:var1}, ${2:var2})"],
 		"description": "make pair"
 	},
 	"push back": {
-		"prefix": "pb",
-		"body": ["push_back"],
+		"prefix": "pbk",
+		"body": ["push_back(${1:var1})"],
 		"description": "push back"
 	}
 }
