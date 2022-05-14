@@ -150,6 +150,11 @@
 		"body": ["long long"],
 		"description": "long long"
 	},
+	"list of int": {
+		"prefix": "li",
+		"body": ["list<${1:int}>"],
+		"description": "list of int"
+	},
 	"vector of int": {
 		"prefix": "vi",
 		"body": ["vector<${1:int}>"],
