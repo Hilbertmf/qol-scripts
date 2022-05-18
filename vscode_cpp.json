@@ -97,12 +97,12 @@
 	},
 	"cout": {
 		"prefix": "out",
-		"body": ["cout << ${1:var} << endl;"],
+		"body": ["cout << ${1:var} << \"\\n\";"],
 		"description": "cout"
 	},
 	"cout2": {
 		"prefix": "out2",
-		"body": ["cout << ${1:var1} << ${2:var2} << endl;"],
+		"body": ["cout << ${1:var1} << ${2:var2} << \"\\n\";"],
 		"description": "cout 2 variables"
 	},
 	"class": {
@@ -152,82 +152,87 @@
 	},
 	"list of int": {
 		"prefix": "li",
-		"body": ["list<${1:int}>"],
+		"body": ["list<${1:int}> ${2:myList}"],
 		"description": "list of int"
 	},
 	"vector of int": {
 		"prefix": "vi",
-		"body": ["vector<${1:int}>"],
+		"body": ["vector<${1:int}> ${2:vec}"],
+		"description": "vector of int"
+	},
+	"vector of int with arguments": {
+		"prefix": "viargs",
+		"body": ["vector<${1:int}> ${2:vec}(${3:size}, ${4:defaultValue})"],
 		"description": "vector of int"
 	},
 	"vector of long long": {
 		"prefix": "vll",
-		"body": ["vector<long long>"],
+		"body": ["vector<long long> ${2:vec}"],
 		"description": "vector of long long"
 	},
 	"vector of string": {
 		"prefix": "vs",
-		"body": ["vector<string>"],
+		"body": ["vector<string> ${2:vec}"],
 		"description": "vector of string"
 	},
 	"pair of int": {
 		"prefix": "pii",
-		"body": ["pair<${1:int}, ${2:int}>"],
+		"body": ["pair<${1:int}, ${2:int}> ${2:myPair}"],
 		"description": "pair of int"
 	},
 	"pair of long long": {
 		"prefix": "pll",
-		"body": ["pair<long long, long long>"],
+		"body": ["pair<long long, long long> ${2:myPair}"],
 		"description": "pair of long long"
 	},
 	"vector of pair of int": {
 		"prefix": "vii",
-		"body": ["vector<pair<${1:int}, ${2:int}>>"],
+		"body": ["vector<pair<${1:int}, ${2:int}>> ${2:vec}"],
 		"description": "vector of pair"
 	},
 	"vector of pair of long long": {
 		"prefix": "vpll",
-		"body": ["vector<pair<long long, long long>>"],
+		"body": ["vector<pair<long long, long long>> ${2:vec}"],
 		"description": "vector of pair of long long"
 	},
 	"map of ints": {
 		"prefix": "mpii",
-		"body": ["map<${1:int}, ${2:int}>"],
+		"body": ["map<${1:int}, ${2:int}> ${2:myMap}"],
 		"description": "map of ints"
 	},
 	"multimap of ints": {
 		"prefix": "mmpii",
-		"body": ["multimap<${1:int}, ${2:int}>"],
+		"body": ["multimap<${1:int}, set:int}> ${2:myMap}"],
 		"description": "multimap of ints"
 	},
 	"set of int": {
 		"prefix": "sti",
-		"body": ["set<${1:int}>"],
+		"body": ["set<${1:int}> ${2:mySet}"],
 		"description": "set of int"
 	},
 	"multiset of int": {
 		"prefix": "mseti",
-		"body": ["multiset<${1:int}>"],
+		"body": ["multiset<${1:int}> ${2:mySet}"],
 		"description": "multiset of int"
 	},
 	"unordered map of ints": {
 		"prefix": "umap",
-		"body": ["unordered_map<${1:int}, ${2:int}>"],
+		"body": ["unordered_map<${1:int}, ${2:int}> ${2:hashmap}"],
 		"description": "unordered map of ints"
 	},
 	"unordered multimap of ints": {
 		"prefix": "ummap",
-		"body": ["unordered_multimap<${1:int}, ${2:int}>"],
+		"body": ["unordered_multimap<${1:int}, ${2:int}> ${2:hashmap}"],
 		"description": "unordered multimap of ints"
 	},
 	"unordered set of int": {
 		"prefix": "uset",
-		"body": ["unordered_set<${1:int}>"],
+		"body": ["unordered_set<${1:int}> ${2:hashset}"],
 		"description": "unordered set of int"
 	},
 	"unordered multiset of int": {
 		"prefix": "umset",
-		"body": ["unordered_multiset<${1:int}>"],
+		"body": ["unordered_multiset<${1:int}> ${2:hashset}"],
 		"description": "unordered multiset of int"
 	},
 	"make pair": {
