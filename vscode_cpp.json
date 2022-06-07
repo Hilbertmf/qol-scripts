@@ -244,5 +244,59 @@
 		"prefix": "pbk",
 		"body": ["push_back(${1:var1})"],
 		"description": "push back"
+	},
+	"ordered set": {
+		"prefix": "ordset",
+		"body": ["typedef tree<${1:int}, // key type",
+		"${2:null_type}, // mapped-policy",
+		"less<${3:int}>, // key comparison function",
+		"rb_tree_tag, // underlying data structure",
+		"tree_order_statistics_node_update>",
+		"ordered_set;",
+		"// use order_of_key and find_by_order methods",
+		],
+		"description": "ordered set"
+	},
+	"ordered multiset": {
+		"prefix": "ordmset",
+		"body": ["typedef tree<${1:int}, // key type",
+		"${2:null_type}, // mapped-policy",
+		"less_equal<${3:int}>, // key comparison function",
+		"rb_tree_tag, // underlying data structure",
+		"tree_order_statistics_node_update>",
+		"ordered_set;",
+		"// use order_of_key and find_by_order methods",
+		"// using less_equal exchanges upper and lower bounds",
+		"// use upper bound to erase elements",
+		"// order_of_key refers to the first occurence of key"
+		],
+		"description": "ordered multiset"
+	},
+	"ordered map": {
+		"prefix": "ordmap",
+		"body": ["typedef tree<${1:int}, // key type",
+		"${2:int}, // mapped-policy",
+		"less<${3:int}>, // key comparison function",
+		"rb_tree_tag, // underlying data structure",
+		"tree_order_statistics_node_update>",
+		"ordered_map;",
+		"// use order_of_key and find_by_order methods"
+		],
+		"description": "ordered map"
+	},
+	"ordered multimap": {
+		"prefix": "ordmultimap",
+		"body": ["typedef tree<${1:int}, // key type",
+		"${2:int}, // mapped-policy",
+		"less_equal<${3:int}>, // key comparison function",
+		"rb_tree_tag, // underlying data structure",
+		"tree_order_statistics_node_update>",
+		"ordered_map;",
+		"// use order_of_key and find_by_order methods",
+		"// using less_equal exchanges upper and lower bounds",
+		"// use upper bound to erase elements",
+		"// order_of_key refers to the first occurence of key"
+		],
+		"description": "ordered multimap"
 	}
 }
