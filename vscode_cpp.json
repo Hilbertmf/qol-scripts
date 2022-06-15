@@ -235,10 +235,25 @@
 		"body": ["unordered_multiset<${1:int}> ${2:hashset}"],
 		"description": "unordered multiset of int"
 	},
-	"make pair": {
-		"prefix": "mp",
-		"body": ["make_pair(${1:var1}, ${2:var2})"],
-		"description": "make pair"
+	"unordered set of pair of int": {
+		"prefix": "usetii",
+		"body": ["struct pair_hash {",
+		"inline std::size_t operator()(const std::pair<${1:int}, ${2:int}> & v) const {",
+		"return v.first*31+v.second;",
+		"}",
+		"",
+		"unordered_set<pair<${1:int}, ${2:int}>, pair_hash> ${3:hashset}"],
+		"description": "unordered set of pair of int"
+	},
+	"unordered multiset of pair of int": {
+		"prefix": "musetii",
+		"body": ["struct pair_hash {",
+		"inline std::size_t operator()(const std::pair<${1:int}, ${2:int}> & v) const {",
+		"return v.first*31+v.second;",
+		"}",
+		"",
+		"unordered_multiset<pair<${1:int}, ${2:int}>, pair_hash> ${3:hashset}"],
+		"description": "unordered multiset of int"
 	},
 	"push back": {
 		"prefix": "pbk",
