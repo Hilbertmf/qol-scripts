@@ -14,8 +14,11 @@ main() {
   while getopts "h" flag; do
     case $flag in
       h)
-      print_usage
-      exit ;;
+        print_usage
+        exit ;;
+      *)
+        print_usage
+        exit 1 ;;
     esac
   done
 

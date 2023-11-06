@@ -14,14 +14,17 @@ main() {
   while getopts "c:s:h" flag; do
     case $flag in
       c)
-      num_problems=$OPTARG
-      contest_flag=1 ;;
+        num_problems=$OPTARG
+        contest_flag=1 ;;
       s)
-      problem_names=$OPTARG 
-      specify_flag=1 ;;
+        problem_names=$OPTARG
+        specify_flag=1 ;;
       h)
-      print_usage
-      exit ;;
+        print_usage
+        exit ;;
+      *)
+        print_usage
+        exit 1 ;;
     esac
   done
 
