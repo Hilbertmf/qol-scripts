@@ -14,11 +14,11 @@ if [ "$os" = "linux" ]; then
 
 	deviceToUmount="${1}1"
 
-	sudo umount $deviceToUmount
+	sudo umount "$deviceToUmount"
 
 	echo "Unmounting device..."
 
-	sudo dd bs=4M if=$2 of=$1 status=progress oflag=sync
+	sudo dd bs=4M if="$2" of="$1" status=progress oflag=sync
 
 	echo "Done!"
 
@@ -37,11 +37,11 @@ elif [ "$os" = "windows" ]; then
 
 	deviceToUmount="${1}1"
 
-	sudo umount $deviceToUmount
+	sudo umount "$deviceToUmount"
 
 	echo "Unmounting device..."
 
-	sudo woeusb -v --target-filesystem NTFS --device $2 $1
+	sudo woeusb -v --target-filesystem NTFS --device "$2" "$1"
 	
 	echo $'This script requires woeusb to be installed, install it using the following PPA:\nsudo add-apt-repository ppa:nilarimogard/webupd8\nsudo apt update\nsudo apt install woeusb'
 

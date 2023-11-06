@@ -20,11 +20,11 @@ main() {
   done
 
   filename="$1"
-  run_file $filename
+  run_file "$filename"
 }
 
 run_file() {
-  g++ $1 && ./a.out -fmax-errors=1 <in.txt >out.txt 
+  g++ "$1" && ./a.out -fmax-errors=1 <in.txt >out.txt
 }
 
 print_usage() {

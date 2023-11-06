@@ -42,20 +42,20 @@ main() {
     for ((i=0;i<num_problems;i++));
     do
       echo "creating file ${problems[$i]}.cpp..."
-      create_file ${problems[$i]}
+      create_file "${problems[$i]}"
     done
   elif ((specify_flag > 0)) ;then
     
-    names=$(echo $problem_names | tr "," " ")
+    names=$(echo "$problem_names" | tr "," " ")
     for name in $names
     do
       echo "creating file $name.cpp..."
-      create_file $name
+      create_file "$name"
     done
   else
     filename="$1"
     echo "creating file $filename.cpp..."
-    create_file $filename
+    create_file "$filename"
   fi
 
   create_io_files
