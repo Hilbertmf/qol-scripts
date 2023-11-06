@@ -32,16 +32,16 @@ main() {
       exit 1
   fi
 
-  if (($contest_flag > 0)); then
+  if ((contest_flag > 0)); then
     echo "creating contest problems..."
     problems=("A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T")
 
-    for ((i=0;i<$num_problems;i++));
+    for ((i=0;i<num_problems;i++));
     do
       echo "creating file ${problems[$i]}.cpp..."
       create_file ${problems[$i]}
     done
-  elif (($specify_flag > 0)) ;then
+  elif ((specify_flag > 0)) ;then
     
     names=$(echo $problem_names | tr "," " ")
     for name in $names
