@@ -7,15 +7,17 @@ fi
 
 filename="$1"
 
-str="#include <stdio.h>
-\n#include <stdlib.h>
-\n\nint main()
-\n{
-  \n\tint aux;\n
-  \n\tscanf(\"%d\", &aux);\n
-  \n\tprintf(\"%d\", aux);\n
-  \n\treturn 0;
-\n}"
+cat << EOF > "$filename.c"
+#include <stdio.h>
+#include <stdlib.h>
 
-echo -e $str > "$filename.c"
+int main()
+{
+\tint aux;
+\tscanf("%d", &aux);
+\tprintf("%d", aux);
+\treturn 0;
+}
+EOF
+
 echo "Done!"

@@ -63,22 +63,25 @@ main() {
 }
 
 create_file() {
-  local code="#include <bits/stdc++.h>
-  \nusing namespace std;
-  \n#define DEBUG(x) cout << #x << \" >>>> \" << x << endl
-  \n#define MID(l, r) (l + (r - l) / 2)
-  \n#define CEILDIVISION(x, y) ((x + y - 1) / y)
-  \n#define INF (int)1e9
-  \n#define LONGINF (long long)1e18 
-  \n#define MEM(arr, val) memset(arr, (val), sizeof(arr))
-  \n#define FASTIO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-  \nconst int MOD = 1000000007; // 10^9 - 7
-  \n
-  \nint main() {
-    \n\tFASTIO;\n\t\n\t\n\treturn 0;
-  \n}"
+  cat << EOF > "$1.cpp"
+#include <bits/stdc++.h>
+using namespace std;
+#define DEBUG(x) cout << #x << " >>>> " << x << endl
+#define MID(l, r) (l + (r - l) / 2)
+#define CEILDIVISION(x, y) ((x + y - 1) / y)
+#define INF (int)1e9
+#define LONGINF (long long)1e18
+#define MEM(arr, val) memset(arr, (val), sizeof(arr))
+#define FASTIO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+const int MOD = 1000000007; // 10^9 - 7
 
-  echo -e $code > "$1.cpp"
+int main() {
+\tFASTIO;
+
+
+\treturn 0;
+}
+EOF
 }
 
 create_io_files() {
