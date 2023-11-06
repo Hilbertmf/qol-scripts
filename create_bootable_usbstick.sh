@@ -8,7 +8,7 @@ if (($# != 2)); then
 fi
 
 
-read -p $'\nEnter the Operating System: For Windows type: windows | For Linux type: linux \n' os
+read -rp $'\nEnter the Operating System: For Windows type: windows | For Linux type: linux \n' os
 
 if [ "$os" = "linux" ]; then
 
