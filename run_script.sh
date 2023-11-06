@@ -8,9 +8,6 @@ main() {
   fi
 
   # get flags
-  contest_flag=0
-  specify_flag=0
-  num_problems=0
   while getopts "h" flag; do
     case $flag in
       h)
