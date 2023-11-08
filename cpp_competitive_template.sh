@@ -69,10 +69,11 @@ create_file() {
   \n#define LONGINF (long long)1e18 
   \n#define MEM(arr, val) memset(arr, (val), sizeof(arr))
   \n#define FASTIO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-  \nconst int MOD = 1000000007; // 10^9 - 7
+  \n#define int long long
+  \nconst int MOD = 1e9 + 7; // 10^9 + 7
   \n
-  \nint main() {
-    \n\tFASTIO;\n\t\n\t\n\treturn 0;
+  \nint32_t main() {
+    \n\tFASTIO;\n\tint t;\n\tcin >> t;\n\n\twhile(t--){\n\n\t}\n\t\n\treturn 0;
   \n}"
 
   echo -e $code > "$1.cpp"
