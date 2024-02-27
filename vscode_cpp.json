@@ -241,6 +241,7 @@
 		"inline std::size_t operator()(const std::pair<${1:int}, ${2:int}> & v) const {",
 		"return v.first*31+v.second;",
 		"}",
+		"};",
 		"",
 		"unordered_set<pair<${1:int}, ${2:int}>, pair_hash> ${3:hashset}"],
 		"description": "unordered set of pair of int"
@@ -251,6 +252,7 @@
 		"inline std::size_t operator()(const std::pair<${1:int}, ${2:int}> & v) const {",
 		"return v.first*31+v.second;",
 		"}",
+		"};",
 		"",
 		"unordered_multiset<pair<${1:int}, ${2:int}>, pair_hash> ${3:hashset}"],
 		"description": "unordered multiset of int"
@@ -313,5 +315,51 @@
 		"// order_of_key refers to the first occurence of key"
 		],
 		"description": "ordered multimap"
+	},
+	"indexed BST": {
+		"prefix": "idxtree",
+		"body": [
+			"#include <ext/pb_ds/assoc_container.hpp>",
+			"#include <ext/pb_ds/tree_policy.hpp>",
+			"",
+			"using namespace std;",
+			"using namespace __gnu_pbds;",
+			"",
+			"// _GLIBCXX_DEBUG must not be defined otherwise some internal check will fail",
+			"#undef _GLIBCXX_DEBUG",
+			"",
+			"template <typename Key, typename Val, typename Comp = less<Key>>",
+			"using indexed_map = tree<Key, // key type",
+			"                         Val, // val type",
+			"                        Comp, // comparison function",
+			"                       rb_tree_tag, tree_order_statistics_node_update>;",
+			"",
+			"template <typename Key, typename Comp = less<Key>>",
+			"using indexed_set = indexed_map<Key, null_type, Comp>;",
+			"",
+			"// IMPORTANT!! (for using less_equals<K>)",
+			"// using less_equals<K> makes lower_bound work as upper_bound and vice-versa",
+			"// for erase use: any.erase(any.find_by_order(any.order_of_key(val)));",
+			"// don't use .find() because it will always return .end()",
+			"template <typename Key, typename Val, typename Comp = less_equal<Key>>",
+			"using indexed_multimap = indexed_map<Key, Val, Comp>;",
+			"",
+			"template <typename Key, typename Comp = less_equal<Key>>",
+			"using indexed_multiset = indexed_map<Key, null_type, Comp>;",
+			"",
+			"bool contains(indexed_multiset<int>& tree, int val) {",
+			"    int order = tree.order_of_key(val);",
+			"    return 0 <= order && order < tree.size() &&",
+			"           *tree.find_by_order(order) == val;",
+			"}",
+			"",
+			"bool contains(indexed_multimap<int, int>& tree, int val) {",
+			"    int order = tree.order_of_key(val);",
+			"    return 0 <= order && order < tree.size() &&",
+			"           tree.find_by_order(order)->first == val;",
+			"}"
+		],
+		"description": "Indexed BSTree"
 	}
 }
+
