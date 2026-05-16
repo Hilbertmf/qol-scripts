@@ -337,6 +337,8 @@
 			"template <typename Key, typename Comp = less<Key>>",
 			"using indexed_set = indexed_map<Key, null_type, Comp>;",
 			"",
+			"// description: find_by_order() returns an iterator to the k-th largest element (counting from zero)",
+			"// description: order_of_key() returns  the number of items in a set that are strictly smaller than our item",
 			"// IMPORTANT!! (for using less_equals<K>)",
 			"// using less_equals<K> makes lower_bound work as upper_bound and vice-versa",
 			"// for erase use: any.erase(any.find_by_order(any.order_of_key(val)));",
