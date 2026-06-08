@@ -2,4 +2,4 @@ YOUTUBE TO MP3:
 yt-dlp --js-runtimes node -x --audio-format mp3 --audio-quality 0 --embed-thumbnail "YOUR_URL"
 
 YOUTUBE TO MP4:
-yt-dlp --js-runtimes node  -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" "https://youtu.be/TZ8Y2Fnseg4?si=mXIwREH1x63duSK1"
+yt-dlp --js-runtimes node  -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" "YOUR_URL"
